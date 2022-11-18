@@ -1,4 +1,5 @@
 #Importing libraries required for building ML pipeline
+import sys
 import pandas as pd
 from sklearn.model_selection import train_test_split,GridSearchCV
 import pickle
@@ -15,7 +16,13 @@ from sqlalchemy import create_engine
 
 
 #Importing the clean and processed data
-conn = create_engine('sqlite:///../data/disasters.db')
+if(len(sys.argv)==3):
+    db_path = sys.argv[1]
+    model_path = sys.argv[2]
+else:
+    db_path = "../data/disasters.db"
+    model_path = "classifier.pkl"
+conn = create_engine('sqlite:///'+db_path)
 categorized_messages = pd.read_sql_table('categorized_messages',conn)
 conn.dispose()
 
@@ -23,9 +30,7 @@ conn.dispose()
 #Split the dataframe to feature and target variables
 X = categorized_messages['message']
 Y = categorized_messages.iloc[:,5:]
-print (Y['related'].value_counts())
-Y['related'] = Y['related'].replace(2,Y['related'].mode()[0])
-print (Y['related'].value_counts())
+
 
 
 #Split data into train and test dataset
@@ -95,7 +100,7 @@ check_accuracy(y_pred_tuned,y_test)
 
 
 #Storing the tuned model in a pickle format
-pickle.dump(tuned_model, open('classifier.pkl', 'wb'))
+pickle.dump(tuned_model, open(model_path, 'wb'))
 
 
 
