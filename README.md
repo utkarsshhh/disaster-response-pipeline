@@ -26,7 +26,7 @@ The [app](https://github.com/utkarsshhh/disaster-response-pipeline/tree/main/app
 
 The [data](https://github.com/utkarsshhh/disaster-response-pipeline/tree/main/data) folder contains the process_data.py script containing the ETL pipeline code storing the raw data files in CSV format to SQLite Database file as "disasters.db".
 
-#### 3. model
+#### 3. models
 
 The [models](https://github.com/utkarsshhh/disaster-response-pipeline/tree/main/models) folder contains the train_classifier script that uses the Pipeline for NLP transformations and MutiOutputClassifier to prepare and train the model and stores the trained model "classifier.pkl" to be used for making predictions in the app.
 
