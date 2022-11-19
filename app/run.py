@@ -28,11 +28,11 @@ def tokenize(text):
 
 # load data
 print (os.path.abspath(os.getcwd()))
-engine = create_engine('sqlite:///../data/disasters.db')
+engine = create_engine('sqlite:///data/disasters.db')
 df = pd.read_sql_table('categorized_messages', engine)
 
 # load model
-model = pickle.load(open("../models/classifier.pkl",'rb'))
+model = pickle.load(open("models/classifier.pkl",'rb'))
 
 
 # index webpage displays cool visuals and receives user input text for model

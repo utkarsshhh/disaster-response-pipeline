@@ -44,6 +44,11 @@ The [models](https://github.com/utkarsshhh/disaster-response-pipeline/tree/main/
 #### 8. [plotly](https://plotly.com/python/getting-started/)
 
 
+### Web Application
+
+The application can be used [here](#)
+
+
 
 ## Development
 
@@ -57,6 +62,9 @@ The following modules have been applied on the data for Data Wrangling and Model
 #### 6. [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
 
 
+## Result
+
+The detailed results of analysis can be found [here](#)
 
 
 ## Licensing
