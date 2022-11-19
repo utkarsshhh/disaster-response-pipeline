@@ -91,7 +91,7 @@ parameters = {
 pipeline  = Pipeline([('vect',CountVectorizer(tokenizer = tokenize)),
                      ('tran',TfidfTransformer()),
                      ('mlf',MultiOutputClassifier(estimator = RandomForestClassifier()))])
-tuned_model = GridSearchCV(pipeline,parameters)
+tuned_model = GridSearchCV(pipeline,parameters,n_jobs=1)
 tuned_model.fit(x_train,y_train)
 y_pred_tuned = tuned_model.predict(x_test)
 

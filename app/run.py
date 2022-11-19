@@ -2,6 +2,7 @@ import json
 import plotly
 import pandas as pd
 import pickle
+import os
 
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
@@ -26,6 +27,7 @@ def tokenize(text):
     return clean_tokens
 
 # load data
+print (os.path.abspath(os.getcwd()))
 engine = create_engine('sqlite:///../data/disasters.db')
 df = pd.read_sql_table('categorized_messages', engine)
 
