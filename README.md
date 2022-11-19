@@ -18,8 +18,9 @@ The code is divided into 3 sections
 
 #### 1.  app
 
-The [app](https://github.com/utkarsshhh/disaster-response-pipeline/tree/main/app) folder contains the HTML, Javascript and Flask code. The application can be run locally from this directory by running the parent file run.py using the command 
+The [app](https://github.com/utkarsshhh/disaster-response-pipeline/tree/main/app) folder contains the HTML, Javascript and Flask code. The application can be run locally from this directory by running the parent file run.py using the commands 
 
+> pip install -r requirements.txt
 > python run.py
 
 #### 2.  data
